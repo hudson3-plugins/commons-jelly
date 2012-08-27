@@ -1,12 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  
   <groupId>org.hudsonci.stapler</groupId>
   <artifactId>commons-jelly</artifactId>
   <name>commons-jelly</name>
-  <version>1.1-hudson-20120717</version>
-  <description>Jelly is a Java and XML based scripting engine. Jelly combines the best ideas from JSTL, Velocity, DVSL, Ant and Cocoon all together in a simple yet powerful scripting engine.</description>
-  <url>http://jakarta.apache.org/commons/jelly/</url>
+  <version>1.1-hudson-20120704</version>
   
+  <description>
+    Jelly is a Java and XML based scripting engine. Jelly combines the best ideas from JSTL, Velocity, DVSL, Ant and Cocoon all together in a simple yet powerful scripting engine.
+  </description>
+  <url>http://jakarta.apache.org/commons/jelly/</url>
   <organization>
     <name>Apache Software Foundation</name>
     <url>http://jakarta.apache.org</url>
@@ -52,13 +56,13 @@
           <useFile>false</useFile>
           <excludes>
             <exclude>**/TestCoreMemoryLeak.java</exclude>
-            <!-- maven2 has a bug to load all nested classes -->
+<!-- maven2 has a bug to load all nested classes -->
             <exclude>**/*$*.java</exclude>
           </excludes>
           <includes>
             <include>**/Test*.java</include>
           </includes>
-          <!--skip>true</skip-->
+<!-- skip>true</skip -->
         </configuration>
       </plugin>
       <plugin>
@@ -99,7 +103,6 @@
       </extension>
     </extensions>
   </build>
-
   <developers>
     <developer>
       <name>James Strachan</name>
@@ -161,7 +164,7 @@
     <developer>
       <name>Daniel F. Savarese</name>
       <id>dfs</id>
-      <email>dfs -&gt; apache.org</email>
+      <email>dfs -> apache.org</email>
     </developer>
     <developer>
       <name>Brett Porter</name>
@@ -303,12 +306,14 @@
       </roles>
     </contributor>
   </contributors>
-    
+  
   <licenses>
     <license>
       <name>The Apache Software License, Version 2.0</name>
       <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <comments>All source code is made available under the terms of the Apache Software License 2.0</comments>
+      <comments>
+        All source code is made available under the terms of the Apache Software License 2.0
+      </comments>
     </license>
   </licenses>
   
@@ -362,13 +367,13 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
-      <!-- test framework is in the jelly jar -->
+<!-- test framework is in the jelly jar -->
       <optional>true</optional>
     </dependency>
     <dependency>
-      <groupId>org.jvnet.hudson.dom4j</groupId>
+      <groupId>dom4j</groupId>
       <artifactId>dom4j</artifactId>
-      <version>1.6.1-hudson-3</version>
+      <version>1.6.1</version>
       <optional>true</optional>
     </dependency>
     <dependency>
@@ -377,7 +382,7 @@
       <version>1.0.0</version>
     </dependency>
   </dependencies>
-
+  
   <distributionManagement>
     <snapshotRepository>
       <id>sonatype-nexus-snapshots</id>
@@ -387,14 +392,21 @@
     <repository>
       <id>sonatype-nexus-staging</id>
       <name>Nexus Staging Repository</name>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+      <url>
+        https://oss.sonatype.org/service/local/staging/deploy/maven2/
+      </url>
     </repository>
   </distributionManagement>
-
+  
   <scm>
-    <connection>scm:git:git://github.com/hudson3-plugins/${project.artifactId}.git</connection>
-    <developerConnection>scm:git:git@github.com:hudson3-plugins/${project.artifactId}.git</developerConnection>
-    <url>https://github.com/hudson3-plugins/${project.artifactId}</url>
+    <connection>
+      scm:git:git://github.com/hudson3-plugins/${project.artifactId}.git
+    </connection>
+    <developerConnection>
+      scm:git:git@github.com:hudson3-plugins/${project.artifactId}.git
+    </developerConnection>
+    <url>
+      https://github.com/hudson3-plugins/${project.artifactId}
+    </url>
   </scm>
-    
 </project>
