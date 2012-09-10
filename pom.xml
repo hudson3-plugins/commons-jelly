@@ -5,7 +5,7 @@
   <groupId>org.hudsonci.stapler</groupId>
   <artifactId>commons-jelly</artifactId>
   <name>commons-jelly</name>
-  <version>1.1-hudson-20120910</version>
+  <version>1.1-hudson-20120910-SNAPSHOT</version>
   
   <description>
     Jelly is a Java and XML based scripting engine. Jelly combines the best ideas from JSTL, Velocity, DVSL, Ant and Cocoon all together in a simple yet powerful scripting engine.
