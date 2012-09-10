@@ -23,8 +23,8 @@ import java.util.Collection;
 import org.apache.commons.jelly.JellyContext;
 import org.apache.commons.jelly.expression.ExpressionSupport;
 
-import org.apache.commons.jexl.Expression;
-import org.apache.commons.jexl.JexlContext;
+import org.apache.commons.jexl2.Expression;
+import org.apache.commons.jexl2.JexlContext;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -81,6 +81,8 @@ public class JexlExpression extends ExpressionSupport {
     }
 }
 
+
+
 class JellyJexlContext implements JexlContext {
 
     private Map vars;
@@ -97,6 +99,18 @@ class JellyJexlContext implements JexlContext {
     public Map getVars() {
         return this.vars;
     }
+
+  public Object get(String string) {
+    return vars.get(string);
+  }
+
+  public void set(String string, Object object) {
+    vars.put(string, object);
+  }
+
+  public boolean has(String string) {
+    return vars.get(string) != null;
+  }
 }
 
 

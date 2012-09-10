@@ -21,6 +21,7 @@ import org.apache.commons.jelly.JellyException;
 import org.apache.commons.jelly.expression.Expression;
 import org.apache.commons.jelly.expression.ExpressionSupport;
 import org.apache.commons.jelly.expression.ExpressionFactory;
+import org.apache.commons.jexl2.JexlEngine;
 
 //import org.apache.commons.jexl.resolver.FlatResolver;
 
@@ -57,9 +58,11 @@ public class JexlExpressionFactory implements ExpressionFactory {
         Expression jexlExpression = null;
         try {
             // this method really does throw Exception
-            jexlExpression = new JexlExpression(
-            org.apache.commons.jexl.ExpressionFactory.createExpression(text)
-            );
+            text = JexlEngine.cleanExpression(text);
+            JexlEngine engine = new JexlEngine();
+            jexlExpression = new JexlExpression(engine.createExpression(text));
+            //org.apache.commons.jexl.ExpressionFactory.createExpression(text)
+            //);
         } catch (Exception e) {
             throw new JellyException("Unable to create expression: " + text, e);
         }
